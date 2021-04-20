@@ -2,6 +2,7 @@
 // You can write your code in this editor
 
 draw_text(8,8, "Score: " + string(global.player_score));
+draw_text(8,24, "DEBUG ball count: " + string(global.ball_count));
 
 draw_set_halign(fa_right);
 draw_text(room_width-8,8, "Hi-Score: " + string(global.high_score));

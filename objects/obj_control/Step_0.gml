@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 if(instance_number(obj_brick) <= 0 or keyboard_check_pressed(ord("R"))){
+	global.ball_count = 0;
 	room_restart();
 }
 
