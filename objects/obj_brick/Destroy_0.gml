@@ -4,4 +4,19 @@
 //	instance_create_layer(x,y, "Instances", obj_powers);
 //}
 
-instance_create_layer(x,y, "Instances", obj_powerN);
+if(irandom_range(1,100) <= 10){
+	powerUpLetter = choose("C", "N")
+	
+	switch(powerUpLetter){
+		case "C":
+			instance_create_layer(x,y, "Instances", obj_powerC);
+			break;
+		case "N":
+			instance_create_layer(x,y, "Instances", obj_powerN);
+			break;
+		default:
+			break;
+	}
+	
+}
+
