@@ -3,3 +3,4 @@
 
 spd = 7;
 currentBattsize = 3;
+isSetPhantom = false;

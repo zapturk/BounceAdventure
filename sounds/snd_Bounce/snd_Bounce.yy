@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "snd_Bounce.ogg",
-  "duration": 0.163435,
+  "duration": 0.158435,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

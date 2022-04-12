@@ -10,6 +10,9 @@ if(bbox_left < 0 or bbox_right > room_width){
 if(bbox_top < 0){
 	y = clamp(y, sprite_yoffset, room_height - sprite_yoffset);
 	vspeed *= -1;
+	if(isPhantom){
+		isPhantom = false;	
+	}
 }
 
 

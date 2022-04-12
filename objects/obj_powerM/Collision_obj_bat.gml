@@ -7,7 +7,7 @@ with(obj_bat){
 		image_xscale = (.25 * (currentBattsize - 1)) + .25;
 		 
 		--currentBattsize;
-		alarm[currentBattsize] = 2 * room_speed;
+		alarm[currentBattsize] = 10 * room_speed;
 	}
 }
 

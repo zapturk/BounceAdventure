@@ -3,3 +3,4 @@
 go = false;
 spd = 3;
 addToBallCount = false;
+isPhantom = false;
