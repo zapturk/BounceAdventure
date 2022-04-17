@@ -13,4 +13,8 @@ part_type_size(_p, .1, .3, 0, .1);
 
 global.ptBasic = _p;
 
+
+global.downDir = 270;
+global.powerUpSpeed = 1.5;
+
 #endregion
