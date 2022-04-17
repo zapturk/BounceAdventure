@@ -11,6 +11,7 @@
     {"id":{"name":"sBall","path":"sprites/sBall/sBall.yy",},"order":3,},
     {"id":{"name":"oPowerM","path":"objects/oPowerM/oPowerM.yy",},"order":7,},
     {"id":{"name":"oPowerN","path":"objects/oPowerN/oPowerN.yy",},"order":5,},
+    {"id":{"name":"oPowerD","path":"objects/oPowerD/oPowerD.yy",},"order":11,},
     {"id":{"name":"sBrick","path":"sprites/sBrick/sBrick.yy",},"order":1,},
     {"id":{"name":"snd_Click","path":"sounds/snd_Click/snd_Click.yy",},"order":2,},
     {"id":{"name":"spowerC","path":"sprites/spowerC/spowerC.yy",},"order":5,},

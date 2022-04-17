@@ -1,5 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
+
+//Minimizes the Bat
+
 audio_play_sound(snd_PowerUp, 1, false);
 
 with(oBat){

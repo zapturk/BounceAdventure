@@ -6,15 +6,18 @@
 
 
 // 10% chance of spawing something
-if(irandom_range(1,10) <= 1){
-	powerUpLetter = choose("C", "E", "M", "N", "P")
+if(irandom_range(1,2) <= 1){
+	//powerUpLetter = choose("C", "E", "M", "N", "P")
 	
 	//Debug 
-	//powerUpLetter = choose("E");
+	powerUpLetter = choose("D");
 
 	switch(powerUpLetter){
 		case "C":
 			instance_create_layer(x,y, "Instances", oPowerC);
+			break;
+		case "D":
+			instance_create_layer(x,y, "Instances", oPowerD);
 			break;
 		case "E":
 			instance_create_layer(x,y, "Instances", oPowerE);

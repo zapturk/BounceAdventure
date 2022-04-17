@@ -1,13 +1,16 @@
 {
   "spriteId": {
-    "name": "sbrickRed",
-    "path": "sprites/sbrickRed/sbrickRed.yy",
+    "name": "sPowerD",
+    "path": "sprites/sPowerD/sPowerD.yy",
   },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "oPowerUp",
+    "path": "objects/oPowerUp/oPowerUp.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -21,7 +24,7 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":1,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"oBat","path":"objects/oBat/oBat.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
@@ -30,7 +33,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oBrick",
+  "name": "oPowerD",
   "tags": [],
   "resourceType": "GMObject",
 }
