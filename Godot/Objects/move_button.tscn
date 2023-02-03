@@ -1,10 +1,48 @@
-[gd_scene load_steps=4 format=3 uid="uid://dviv72ppwo3tf"]
+[gd_scene load_steps=7 format=3 uid="uid://dviv72ppwo3tf"]
 
 [ext_resource type="Script" path="res://Objects/move_button.gd" id="1_hneua"]
 [ext_resource type="Texture2D" uid="uid://cr7acn2ufwcjs" path="res://Assets/Art/Selctor.png" id="1_ow1cb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t6apv"]
 size = Vector2(14, 14)
+
+[sub_resource type="Animation" id="Animation_3krfw"]
+resource_name = "Fade"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_43kk7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0qiu1"]
+_data = {
+"Fade": SubResource("Animation_3krfw"),
+"RESET": SubResource("Animation_43kk7")
+}
 
 [node name="MoveButton" type="Area2D"]
 script = ExtResource("1_hneua")
@@ -14,5 +52,10 @@ texture = ExtResource("1_ow1cb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_t6apv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0qiu1")
+}
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

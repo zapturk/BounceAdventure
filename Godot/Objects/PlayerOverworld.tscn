@@ -18,22 +18,18 @@ hframes = 17
 shape = SubResource("RectangleShape2D_6heys")
 
 [node name="MoveButton" parent="." instance=ExtResource("3_noae0")]
-visible = false
 position = Vector2(16, 0)
 dir = "ui_right"
 
 [node name="MoveButton2" parent="." instance=ExtResource("3_noae0")]
-visible = false
 position = Vector2(0, -16)
 dir = "ui_up"
 
 [node name="MoveButton3" parent="." instance=ExtResource("3_noae0")]
-visible = false
 position = Vector2(-16, 0)
 dir = "ui_left"
 
 [node name="MoveButton4" parent="." instance=ExtResource("3_noae0")]
-visible = false
 position = Vector2(0, 16)
 dir = "ui_down"
 
