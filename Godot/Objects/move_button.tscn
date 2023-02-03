@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dviv72ppwo3tf"]
+
+[ext_resource type="Script" path="res://Objects/move_button.gd" id="1_hneua"]
+[ext_resource type="Texture2D" uid="uid://cr7acn2ufwcjs" path="res://Assets/Art/Selctor.png" id="1_ow1cb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t6apv"]
+size = Vector2(14, 14)
+
+[node name="MoveButton" type="Area2D"]
+script = ExtResource("1_hneua")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ow1cb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_t6apv")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

@@ -1,14 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://ddg5pe3qdhil5"]
+[gd_scene load_steps=5 format=3 uid="uid://ddg5pe3qdhil5"]
 
-[ext_resource type="PackedScene" uid="uid://uvs4qvunmrxt" path="res://Objects/player.tscn" id="1_gntfu"]
-[ext_resource type="Texture2D" uid="uid://cvfm0dqn3cybg" path="res://Assets/Art/TestBackground.png" id="2_itlhi"]
+[ext_resource type="Texture2D" uid="uid://dapxi50bxnuew" path="res://Assets/Art/Space Background.png" id="1_mpxue"]
+[ext_resource type="Texture2D" uid="uid://ctxla2wauyxxf" path="res://Assets/Art/grid.png" id="1_nxt15"]
+[ext_resource type="PackedScene" uid="uid://bi54xbe0xmqn5" path="res://Objects/PlayerOverworld.tscn" id="2_cnpdm"]
+[ext_resource type="Script" path="res://Rooms/TextureRect.gd" id="3_naro1"]
 
 [node name="Stage" type="Node2D"]
 
-[node name="TestBackground" type="Sprite2D" parent="."]
-position = Vector2(55, 55)
-scale = Vector2(2, 2)
-texture = ExtResource("2_itlhi")
+[node name="background" type="Sprite2D" parent="."]
+texture = ExtResource("1_mpxue")
 
-[node name="Player" parent="." instance=ExtResource("1_gntfu")]
-position = Vector2(28, 28)
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -160.0
+offset_top = -160.0
+offset_right = 160.0
+offset_bottom = 160.0
+texture = ExtResource("1_nxt15")
+stretch_mode = 1
+script = ExtResource("3_naro1")
+
+[node name="PlayerOverworld" parent="." instance=ExtResource("2_cnpdm")]
