@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqvt0urql3ryj"]
+
+[ext_resource type="PackedScene" uid="uid://crdl8d0pgjxf5" path="res://Objects/player.tscn" id="1_xgmpe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dr43u"]
+size = Vector2(16, 144)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c177q"]
+size = Vector2(288, 16)
+
+[node name="TestBreakoutRoom" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_xgmpe")]
+position = Vector2(128, 136)
+
+[node name="WallLeft" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallLeft"]
+position = Vector2(-8, 72)
+shape = SubResource("RectangleShape2D_dr43u")
+
+[node name="WallRight" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallRight"]
+position = Vector2(264, 72)
+shape = SubResource("RectangleShape2D_dr43u")
+
+[node name="WallTop" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallTop"]
+position = Vector2(128, -8)
+shape = SubResource("RectangleShape2D_c177q")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
