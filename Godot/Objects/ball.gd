@@ -1,12 +1,21 @@
-extends RigidBody2D
+extends CharacterBody2D
 
-var speed = 100
+var speed: int = 75
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	randomize()
+	velocity.x = [-.5,.5][randi() % 2]
+	velocity.y = 1
 
+func _physics_process(delta):
+	var collision_object = move_and_collide(velocity * speed * delta)
+	if collision_object:
+		velocity = velocity.bounce(collision_object.get_normal())
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func stop_ball():
+	speed = 0
+
+func restart_ball():
+	speed = 50
+	velocity.x = [-.5,.5][randi() % 2]
+	velocity.y = 1

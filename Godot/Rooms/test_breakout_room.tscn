@@ -5,37 +5,38 @@
 [ext_resource type="PackedScene" uid="uid://c4va6j6kum7wv" path="res://Objects/ball.tscn" id="3_ltv64"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dr43u"]
-size = Vector2(16, 144)
+size = Vector2(16, 184)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c177q"]
-size = Vector2(288, 16)
+size = Vector2(352, 16)
 
 [node name="TestBreakoutRoom" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
 texture = ExtResource("1_45xvm")
 centered = false
 
 [node name="Player" parent="." instance=ExtResource("1_xgmpe")]
-position = Vector2(128, 136)
+position = Vector2(160, 168)
 
 [node name="WallLeft" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WallLeft"]
-position = Vector2(-8, 72)
+position = Vector2(-8, 88)
 shape = SubResource("RectangleShape2D_dr43u")
 
 [node name="WallRight" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WallRight"]
-position = Vector2(264, 72)
+position = Vector2(328, 88)
 shape = SubResource("RectangleShape2D_dr43u")
 
 [node name="WallTop" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WallTop"]
-position = Vector2(128, -8)
+position = Vector2(160, -8)
 shape = SubResource("RectangleShape2D_c177q")
 
 [node name="Ball" parent="." instance=ExtResource("3_ltv64")]
-position = Vector2(128, 124)
+position = Vector2(160, 152)
