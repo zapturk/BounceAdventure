@@ -40,6 +40,7 @@
     {"id":{"name":"oPowerE","path":"objects/oPowerE/oPowerE.yy",},"order":8,},
     {"id":{"name":"oControl","path":"objects/oControl/oControl.yy",},"order":3,},
     {"id":{"name":"oBrick","path":"objects/oBrick/oBrick.yy",},"order":0,},
+    {"id":{"name":"sGameBackground","path":"sprites/sGameBackground/sGameBackground.yy",},"order":0,},
     {"id":{"name":"sBall","path":"sprites/sBall/sBall.yy",},"order":3,},
     {"id":{"name":"oPowerM","path":"objects/oPowerM/oPowerM.yy",},"order":7,},
     {"id":{"name":"oPowerN","path":"objects/oPowerN/oPowerN.yy",},"order":5,},

@@ -23,6 +23,7 @@
     {"name":"oPowerP","order":9,"path":"objects/oPowerP/oPowerP.yy",},
     {"name":"oPowerE","order":8,"path":"objects/oPowerE/oPowerE.yy",},
     {"name":"oControl","order":3,"path":"objects/oControl/oControl.yy",},
+    {"name":"sGameBackground","order":14,"path":"sprites/sGameBackground/sGameBackground.yy",},
     {"name":"sBall","order":3,"path":"sprites/sBall/sBall.yy",},
     {"name":"oPowerM","order":7,"path":"objects/oPowerM/oPowerM.yy",},
     {"name":"oPowerN","order":5,"path":"objects/oPowerN/oPowerN.yy",},

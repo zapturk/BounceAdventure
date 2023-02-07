@@ -4,8 +4,9 @@ if(!go){
 	x = oBat.x;
 	image_speed = 0;
 }
-
-part_particles_create(global.partSystem, x, y, global.ptBasic, 1);	
+else{
+	part_particles_create(global.partSystem, x, y, global.ptBasic, 1);	
+}
 
 if(!addToBallCount){
 	if(global.ball_count <= 0){

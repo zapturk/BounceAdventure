@@ -6,11 +6,11 @@
 
 
 // 10% chance of spawing something
-if(irandom_range(1,2) <= 1){
-	//powerUpLetter = choose("C", "E", "M", "N", "P")
+if(irandom_range(1,4) <= 1){
+	//powerUpLetter = choose("C", "D", "E", "M", "N", "P")
 	
 	//Debug 
-	powerUpLetter = choose("D");
+	powerUpLetter = choose("N");
 
 	switch(powerUpLetter){
 		case "C":
