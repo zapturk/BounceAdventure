@@ -1,16 +1,14 @@
 extends CharacterBody2D
 
-var speed: int = 150 
-var yPos: int
+var speed: int = 3
 
 func _ready():
-	yPos = global_position.y
+	pass
 
 func _physics_process(delta):
-	position.y = yPos
 	velocity = Vector2.ZERO
 	if Input.is_action_pressed("ui_left"):
 		velocity.x -= 1 * speed
 	if Input.is_action_pressed("ui_right"):
 		velocity.x += 1 * speed
-	move_and_slide()
+	move_and_collide(velocity)

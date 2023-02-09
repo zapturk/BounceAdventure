@@ -14,5 +14,5 @@ texture = ExtResource("2_ppqq8")
 hframes = 17
 frame = 9
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="PlayerShape" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_utbe6")

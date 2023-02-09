@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://cqvt0urql3ryj"]
 
 [ext_resource type="Texture2D" uid="uid://dapxi50bxnuew" path="res://Assets/Art/Space Background.png" id="1_45xvm"]
+[ext_resource type="Script" path="res://Rooms/test_breakout_room.gd" id="1_msi8y"]
 [ext_resource type="PackedScene" uid="uid://crdl8d0pgjxf5" path="res://Objects/player.tscn" id="1_xgmpe"]
-[ext_resource type="PackedScene" uid="uid://c4va6j6kum7wv" path="res://Objects/ball.tscn" id="3_ltv64"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dr43u"]
 size = Vector2(16, 184)
@@ -11,6 +11,7 @@ size = Vector2(16, 184)
 size = Vector2(352, 16)
 
 [node name="TestBreakoutRoom" type="Node2D"]
+script = ExtResource("1_msi8y")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(3, 3)
@@ -37,6 +38,3 @@ shape = SubResource("RectangleShape2D_dr43u")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WallTop"]
 position = Vector2(160, -8)
 shape = SubResource("RectangleShape2D_c177q")
-
-[node name="Ball" parent="." instance=ExtResource("3_ltv64")]
-position = Vector2(160, 152)
