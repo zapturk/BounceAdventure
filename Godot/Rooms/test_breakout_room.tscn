@@ -1,11 +1,11 @@
 [gd_scene load_steps=6 format=3 uid="uid://cqvt0urql3ryj"]
 
-[ext_resource type="Texture2D" uid="uid://dapxi50bxnuew" path="res://Assets/Art/Space Background.png" id="1_45xvm"]
 [ext_resource type="Script" path="res://Rooms/test_breakout_room.gd" id="1_msi8y"]
 [ext_resource type="PackedScene" uid="uid://crdl8d0pgjxf5" path="res://Objects/player.tscn" id="1_xgmpe"]
+[ext_resource type="Texture2D" uid="uid://bwhnelv6nd6rd" path="res://Assets/Art/GameBackground.png" id="2_htpul"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dr43u"]
-size = Vector2(16, 184)
+size = Vector2(16, 196)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c177q"]
 size = Vector2(352, 16)
@@ -14,8 +14,7 @@ size = Vector2(352, 16)
 script = ExtResource("1_msi8y")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(3, 3)
-texture = ExtResource("1_45xvm")
+texture = ExtResource("2_htpul")
 centered = false
 
 [node name="Player" parent="." instance=ExtResource("1_xgmpe")]
@@ -24,17 +23,23 @@ position = Vector2(160, 168)
 [node name="WallLeft" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WallLeft"]
-position = Vector2(-8, 88)
+position = Vector2(-8, 94)
 shape = SubResource("RectangleShape2D_dr43u")
 
 [node name="WallRight" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WallRight"]
-position = Vector2(328, 88)
+position = Vector2(328, 96)
 shape = SubResource("RectangleShape2D_dr43u")
 
 [node name="WallTop" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WallTop"]
 position = Vector2(160, -8)
+shape = SubResource("RectangleShape2D_c177q")
+
+[node name="WallBottom" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallBottom"]
+position = Vector2(160, 200)
 shape = SubResource("RectangleShape2D_c177q")

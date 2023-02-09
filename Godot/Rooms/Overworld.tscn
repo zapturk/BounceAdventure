@@ -11,12 +11,13 @@
 texture = ExtResource("1_mpxue")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -160.0
-offset_top = -160.0
-offset_right = 160.0
-offset_bottom = 160.0
+offset_left = -1008.0
+offset_top = -1008.0
+offset_right = 992.0
+offset_bottom = 992.0
 texture = ExtResource("1_nxt15")
 stretch_mode = 1
 script = ExtResource("3_naro1")
 
 [node name="PlayerOverworld" parent="." instance=ExtResource("2_cnpdm")]
+position = Vector2(48, 0)

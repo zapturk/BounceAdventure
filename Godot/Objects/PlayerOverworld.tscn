@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bi54xbe0xmqn5"]
+[gd_scene load_steps=6 format=3 uid="uid://bi54xbe0xmqn5"]
 
 [ext_resource type="Script" path="res://Objects/PlayerOverworld.gd" id="1_hfw63"]
 [ext_resource type="Texture2D" uid="uid://by568jn4q5is" path="res://Assets/Art/Player.png" id="2_fbp7c"]
 [ext_resource type="PackedScene" uid="uid://dviv72ppwo3tf" path="res://Objects/move_button.tscn" id="3_noae0"]
+[ext_resource type="Texture2D" uid="uid://uj5exnljggq7" path="res://Assets/Art/OverworldHud.png" id="4_7cwat"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6heys"]
 size = Vector2(16, 8)
@@ -11,26 +12,31 @@ size = Vector2(16, 8)
 script = ExtResource("1_hfw63")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-48, 0)
 texture = ExtResource("2_fbp7c")
 hframes = 17
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-48, 0)
 shape = SubResource("RectangleShape2D_6heys")
 
 [node name="MoveButton" parent="." instance=ExtResource("3_noae0")]
-position = Vector2(16, 0)
+position = Vector2(-32, 0)
 dir = "ui_right"
 
 [node name="MoveButton2" parent="." instance=ExtResource("3_noae0")]
-position = Vector2(0, -16)
+position = Vector2(-48, -16)
 dir = "ui_up"
 
 [node name="MoveButton3" parent="." instance=ExtResource("3_noae0")]
-position = Vector2(-16, 0)
+position = Vector2(-64, 0)
 dir = "ui_left"
 
 [node name="MoveButton4" parent="." instance=ExtResource("3_noae0")]
-position = Vector2(0, 16)
+position = Vector2(-48, 16)
 dir = "ui_down"
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Hud" type="Sprite2D" parent="."]
+texture = ExtResource("4_7cwat")

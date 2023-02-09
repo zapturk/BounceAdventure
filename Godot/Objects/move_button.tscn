@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cr7acn2ufwcjs" path="res://Assets/Art/Selctor.png" id="1_ow1cb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t6apv"]
-size = Vector2(14, 14)
+size = Vector2(15, 15)
 
 [sub_resource type="Animation" id="Animation_3krfw"]
 resource_name = "Fade"
@@ -51,6 +51,7 @@ script = ExtResource("1_hneua")
 texture = ExtResource("1_ow1cb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_t6apv")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
