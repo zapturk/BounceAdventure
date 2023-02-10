@@ -64,4 +64,4 @@ func getLevelStatus(x, y):
 	return levelDic.get(str(x)+str(y))
 
 func getMoveVisable(x, y):
-	return getLevelStatus(x-1, y) || getLevelStatus(x+1, y) || getLevelStatus(x, y-1) || getLevelStatus(x, y+1)
+	return getLevelStatus(x, y) || getLevelStatus(x-1, y) || getLevelStatus(x+1, y) || getLevelStatus(x, y-1) || getLevelStatus(x, y+1)
