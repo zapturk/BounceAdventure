@@ -20,4 +20,4 @@ stretch_mode = 1
 script = ExtResource("3_naro1")
 
 [node name="PlayerOverworld" parent="." instance=ExtResource("2_cnpdm")]
-position = Vector2(48, 0)
+position = Vector2(-8, -8)

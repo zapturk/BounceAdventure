@@ -6,11 +6,16 @@ var inputs = {"ui_right": Vector2.RIGHT,
 			"ui_up": Vector2.UP,
 			"ui_down": Vector2.DOWN}
 var moving = false
+var coordinates
+var levelDic = {}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	position = position.snapped(Vector2.ONE * TileSize)
 	position += Vector2.ONE * TileSize/2
+	coordinates = $"Label"
+	coordinates.set_text(coordinatsText())
+	setLevelDic()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -33,3 +38,30 @@ func move(dir):
 	moving = true
 	await tween.finished
 	moving = false
+	coordinates.set_text(coordinatsText())
+	
+func coordinatsText():
+	var text = ""
+	var x = (global_position.x - 8) / 16
+	var y = (global_position.y - 8) / 16
+	
+	text = "x: " + str(x) + " y: " + str(y)
+		
+	return text
+	
+func setLevelDic():
+	for x in range(-200, 200):
+		for y in range(-200, 200):
+			levelDic.merge({str(x)+str(y): false})
+	print(levelDic.get("00"))
+	levelDic.merge({"00": true}, true)
+	print(levelDic.get("00"))
+
+func getPlayerPosLevelStatus():
+	return getLevelStatus((global_position.x - 8) / 16, (global_position.y - 8) / 16)
+
+func getLevelStatus(x, y):
+	return levelDic.get(str(x)+str(y))
+
+func getMoveVisable(x, y):
+	return getLevelStatus(x-1, y) || getLevelStatus(x+1, y) || getLevelStatus(x, y-1) || getLevelStatus(x, y+1)
