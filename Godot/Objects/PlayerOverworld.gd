@@ -45,7 +45,7 @@ func coordinatsText():
 	var x = (global_position.x - 8) / 16
 	var y = (global_position.y - 8) / 16
 	
-	text = "x: " + str(x) + " y: " + str(y)
+	text = "x:" + str(x) + " y:" + str(y)
 		
 	return text
 	

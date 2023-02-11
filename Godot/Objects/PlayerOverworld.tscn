@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bi54xbe0xmqn5"]
+[gd_scene load_steps=7 format=3 uid="uid://bi54xbe0xmqn5"]
 
 [ext_resource type="Script" path="res://Objects/PlayerOverworld.gd" id="1_hfw63"]
 [ext_resource type="Texture2D" uid="uid://by568jn4q5is" path="res://Assets/Art/Player.png" id="2_fbp7c"]
 [ext_resource type="PackedScene" uid="uid://dviv72ppwo3tf" path="res://Objects/move_button.tscn" id="3_noae0"]
 [ext_resource type="Texture2D" uid="uid://uj5exnljggq7" path="res://Assets/Art/OverworldHud.png" id="4_7cwat"]
+[ext_resource type="FontFile" uid="uid://bmc7ioli0p2lp" path="res://Assets/Fonts/Pixel Square 10.ttf" id="5_xcb1u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6heys"]
 size = Vector2(16, 8)
@@ -46,5 +47,8 @@ offset_left = 104.0
 offset_top = -80.0
 offset_right = 195.0
 offset_bottom = -54.0
+theme_override_fonts/font = ExtResource("5_xcb1u")
+theme_override_font_sizes/font_size = 10
 text = "X: 0 Y: 0"
 horizontal_alignment = 1
+uppercase = true
