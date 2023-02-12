@@ -52,6 +52,7 @@ jobs:
         run: |
           mkdir -v -p build/linux
           cd $PROJECT_PATH
+          mkdir -p .godot/editor .godot/imported
           godot -v --headless --export-release "Linux/X11" ../build/linux/$EXPORT_NAME.x86_64
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
@@ -110,6 +111,7 @@ jobs:
         run: |
           mkdir -v -p build/mac
           cd $PROJECT_PATH
+          mkdir -p .godot/editor .godot/imported
           godot -v --headless --export-release "macOS" ../build/mac/$EXPORT_NAME.zip
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
