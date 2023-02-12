@@ -3,17 +3,17 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://bmc7ioli0p2lp"
-path="res://.godot/imported/Pixel Square 10.ttf-051940d7fbdcb0cc738fa1359409bd79.fontdata"
+path="res://.godot/imported/PixelSquare10.ttf-781638f5bb4e72aa942b4c45a226c506.fontdata"
 
 [deps]
 
-source_file="res://Assets/Fonts/Pixel Square 10.ttf"
-dest_files=["res://.godot/imported/Pixel Square 10.ttf-051940d7fbdcb0cc738fa1359409bd79.fontdata"]
+source_file="res://Assets/Fonts/PixelSquare10.ttf"
+dest_files=["res://.godot/imported/PixelSquare10.ttf-781638f5bb4e72aa942b4c45a226c506.fontdata"]
 
 [params]
 
 Rendering=null
-antialiasing=1
+antialiasing=0
 generate_mipmaps=false
 multichannel_signed_distance_field=false
 msdf_pixel_range=8

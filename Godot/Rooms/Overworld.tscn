@@ -1,14 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://ddg5pe3qdhil5"]
+[gd_scene load_steps=5 format=3 uid="uid://cn7mq87snh6n8"]
 
-[ext_resource type="Texture2D" uid="uid://dapxi50bxnuew" path="res://Assets/Art/Space Background.png" id="1_mpxue"]
+[ext_resource type="Texture2D" uid="uid://dapxi50bxnuew" path="res://Assets/Art/SpaceBackground.png" id="1_gqpq4"]
 [ext_resource type="Texture2D" uid="uid://ctxla2wauyxxf" path="res://Assets/Art/grid.png" id="1_nxt15"]
-[ext_resource type="PackedScene" uid="uid://bi54xbe0xmqn5" path="res://Objects/PlayerOverworld.tscn" id="2_cnpdm"]
+[ext_resource type="PackedScene" path="res://Objects/PlayerOverworld.tscn" id="2_cnpdm"]
 [ext_resource type="Script" path="res://Rooms/TextureRect.gd" id="3_naro1"]
 
 [node name="Overworld" type="Node2D"]
 
 [node name="background" type="Sprite2D" parent="."]
-texture = ExtResource("1_mpxue")
+texture = ExtResource("1_gqpq4")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = -1008.0
