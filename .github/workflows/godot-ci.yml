@@ -20,7 +20,7 @@ jobs:
           lfs: true
       - name: Setup
         run: |
-          mkdir -v -p ~/.local/share/godot/templates
+          mkdir -v -p ~/.local/share/godot/export_templates
           ls /root/.local/share/godot/templates/${GODOT_VERSION}.${RELEASE_NAME}
           mv /root/.local/share/godot/templates/${GODOT_VERSION}.${RELEASE_NAME} ~/.local/share/godot/export_templates/${GODOT_VERSION}.${RELEASE_NAME}
           ls /github/home/.local/share/godot/export_templates/${GODOT_VERSION}.${RELEASE_NAME}
