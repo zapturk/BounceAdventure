@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bhfhg0fcvvln2"
-path="res://.godot/imported/sci-fi.png-c0c728b2de70bd7547b69b635b38ee8d.ctex"
+path="res://.godot/imported/sci-fi.png-b0e727de9175d744570dfb755009bb91.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sci Fi Gui/sci-fi.png"
-dest_files=["res://.godot/imported/sci-fi.png-c0c728b2de70bd7547b69b635b38ee8d.ctex"]
+source_file="res://Assets/SciFiGui/sci-fi.png"
+dest_files=["res://.godot/imported/sci-fi.png-b0e727de9175d744570dfb755009bb91.ctex"]
 
 [params]
 
