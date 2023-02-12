@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Pixel Square 10.ttf-051940d7fbdcb0cc738fa1359
 [params]
 
 Rendering=null
-antialiasing=1
+antialiasing=0
 generate_mipmaps=false
 multichannel_signed_distance_field=false
 msdf_pixel_range=8
