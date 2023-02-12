@@ -21,9 +21,7 @@ jobs:
       - name: Setup
         run: |
           mkdir -v -p ~/.local/share/godot/export_templates
-          ls /root/.local/share/godot/templates/${GODOT_VERSION}.${RELEASE_NAME}
           mv /root/.local/share/godot/templates/${GODOT_VERSION}.${RELEASE_NAME} ~/.local/share/godot/export_templates/${GODOT_VERSION}.${RELEASE_NAME}
-          ls /github/home/.local/share/godot/export_templates/${GODOT_VERSION}.${RELEASE_NAME}
       - name: Windows Build
         run: |
           mkdir -v -p build/windows
@@ -35,85 +33,85 @@ jobs:
           name: windows
           path: build/windows
 
-  # export-linux:
-  #   name: Linux Export
-  #   runs-on: ubuntu-20.04
-  #   container:
-  #     image: zapturk/scott-godot:latest
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v2
-  #       with:
-  #         lfs: true
-  #     - name: Setup
-  #       run: |
-  #         mkdir -v -p ~/.local/share/godot/templates
-  #         mv /root/.local/share/godot/templates/${GODOT_VERSION}.${RELEASE_NAME} ~/.local/share/godot/templates/${GODOT_VERSION}.${RELEASE_NAME}
-  #     - name: Linux Build
-  #       run: |
-  #         mkdir -v -p build/linux
-  #         cd $PROJECT_PATH
-  #         godot -v --headless --export-release "Linux/X11" ../build/linux/$EXPORT_NAME.x86_64
-  #     - name: Upload Artifact
-  #       uses: actions/upload-artifact@v1
-  #       with:
-  #         name: linux
-  #         path: build/linux
+  export-linux:
+    name: Linux Export
+    runs-on: ubuntu-20.04
+    container:
+      image: zapturk/scott-godot:latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          lfs: true
+      - name: Setup
+        run: |
+          mkdir -v -p ~/.local/share/godot/export_templates
+          mv /root/.local/share/godot/templates/${GODOT_VERSION}.${RELEASE_NAME} ~/.local/share/godot/export_templates/${GODOT_VERSION}.${RELEASE_NAME}
+      - name: Linux Build
+        run: |
+          mkdir -v -p build/linux
+          cd $PROJECT_PATH
+          godot -v --headless --export-release "Linux/X11" ../build/linux/$EXPORT_NAME.x86_64
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: linux
+          path: build/linux
 
-  # export-web:
-  #   name: Web Export
-  #   runs-on: ubuntu-20.04
-  #   container:
-  #     image: zapturk/scott-godot:latest
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v2
-  #       with:
-  #         lfs: true
-  #     - name: Setup
-  #       run: |
-  #         mkdir -v -p ~/.local/share/godot/templates
-  #         mv /root/.local/share/godot/templates/${GODOT_VERSION}.${RELEASE_NAME} ~/.local/share/godot/templates/${GODOT_VERSION}.${RELEASE_NAME}
-  #     - name: Web Build
-  #       run: |
-  #         mkdir -v -p build/web
-  #         cd $PROJECT_PATH
-  #         godot -v --headless --export-release "Web" ../build/web/index.html
-  #     - name: Upload Artifact
-  #       uses: actions/upload-artifact@v1
-  #       with:
-  #         name: web
-  #         path: build/web
-  #     - name: Install rsync 📚
-  #       run: |
-  #         apt-get update && apt-get install -y rsync
-  #     - name: Deploy to GitHub Pages 🚀
-  #       uses: JamesIves/github-pages-deploy-action@releases/v4
-  #       with:
-  #         branch: gh-pages # The branch the action should deploy to.
-  #         folder: build/web # The folder the action should deploy.
+  export-web:
+    name: Web Export
+    runs-on: ubuntu-20.04
+    container:
+      image: zapturk/scott-godot:latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          lfs: true
+      - name: Setup
+        run: |
+          mkdir -v -p ~/.local/share/godot/export_templates
+          mv /root/.local/share/godot/templates/${GODOT_VERSION}.${RELEASE_NAME} ~/.local/share/godot/export_templates/${GODOT_VERSION}.${RELEASE_NAME}
+      - name: Web Build
+        run: |
+          mkdir -v -p build/web
+          cd $PROJECT_PATH
+          godot -v --headless --export-release "Web" ../build/web/index.html
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: web
+          path: build/web
+      - name: Install rsync 📚
+        run: |
+          apt-get update && apt-get install -y rsync
+      - name: Deploy to GitHub Pages 🚀
+        uses: JamesIves/github-pages-deploy-action@releases/v4
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: build/web # The folder the action should deploy.
 
-  # export-mac:
-  #   name: Mac Export
-  #   runs-on: ubuntu-20.04
-  #   container:
-  #     image: zapturk/scott-godot:latest
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v2
-  #       with:
-  #         lfs: true
-  #     - name: Setup
-  #       run: |
-  #         mkdir -v -p ~/.local/share/godot/templates
-  #         mv /root/.local/share/godot/templates/${GODOT_VERSION}.${RELEASE_NAME} ~/.local/share/godot/templates/${GODOT_VERSION}.${RELEASE_NAME}
-  #     - name: Mac Build
-  #       run: |
-  #         mkdir -v -p build/mac
-  #         cd $PROJECT_PATH
-  #         godot -v --headless --export-release "macOS" ../build/mac/$EXPORT_NAME.zip
-  #     - name: Upload Artifact
-  #       uses: actions/upload-artifact@v1
-  #       with:
-  #         name: mac
-  #         path: build/mac
+  export-mac:
+    name: Mac Export
+    runs-on: ubuntu-20.04
+    container:
+      image: zapturk/scott-godot:latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          lfs: true
+      - name: Setup
+        run: |
+          mkdir -v -p ~/.local/share/godot/export_templates
+          mv /root/.local/share/godot/templates/${GODOT_VERSION}.${RELEASE_NAME} ~/.local/share/godot/export_templates/${GODOT_VERSION}.${RELEASE_NAME}
+      - name: Mac Build
+        run: |
+          mkdir -v -p build/mac
+          cd $PROJECT_PATH
+          godot -v --headless --export-release "macOS" ../build/mac/$EXPORT_NAME.zip
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: mac
+          path: build/mac
