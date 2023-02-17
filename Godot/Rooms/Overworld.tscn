@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dapxi50bxnuew" path="res://Assets/Art/SpaceBackground.png" id="1_gqpq4"]
 [ext_resource type="Texture2D" uid="uid://ctxla2wauyxxf" path="res://Assets/Art/grid.png" id="1_nxt15"]
-[ext_resource type="PackedScene" path="res://Objects/PlayerOverworld.tscn" id="2_cnpdm"]
+[ext_resource type="PackedScene" uid="uid://mh0x4gvqxmhn" path="res://Objects/PlayerOverworld.tscn" id="2_cnpdm"]
 [ext_resource type="Script" path="res://Rooms/TextureRect.gd" id="3_naro1"]
 
 [node name="Overworld" type="Node2D"]
