@@ -38,7 +38,7 @@ jobs:
     name: Linux Export
     runs-on: ubuntu-20.04
     container:
-      image: zapturk/scott-godot:latest
+      image: zapturk/scott-godot:rc2
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -97,7 +97,7 @@ jobs:
     name: Mac Export
     runs-on: ubuntu-20.04
     container:
-      image: zapturk/scott-godot:latest
+      image: zapturk/scott-godot:rc2
     steps:
       - name: Checkout
         uses: actions/checkout@v2
