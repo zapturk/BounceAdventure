@@ -42,12 +42,18 @@ func move(dir):
 	
 func coordinatsText():
 	var text = ""
-	var x = (global_position.x - 8) / 16
-	var y = (global_position.y - 8) / 16
+	var x = getX()
+	var y = getY()
 	
 	text = "x:" + str(x) + " y:" + str(y)
 		
 	return text
+	
+func getX():
+	return (global_position.x - 8) / 16
+	
+func getY():
+	return (global_position.y - 8) / 16
 	
 func setLevelDic():
 	for x in range(-200, 200):
@@ -58,7 +64,7 @@ func setLevelDic():
 	print(levelDic.get("00"))
 
 func getPlayerPosLevelStatus():
-	return getLevelStatus((global_position.x - 8) / 16, (global_position.y - 8) / 16)
+	return getLevelStatus(getX(), getY())
 
 func getLevelStatus(x, y):
 	return levelDic.get(str(x)+str(y))
