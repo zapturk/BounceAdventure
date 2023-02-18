@@ -8,6 +8,7 @@ var inputs = {"ui_right": Vector2.RIGHT,
 var moving = false
 var coordinates
 var levelDic = {}
+signal level_changed
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -71,3 +72,8 @@ func getLevelStatus(x, y):
 
 func getMoveVisable(x, y):
 	return getLevelStatus(x, y) || getLevelStatus(x-1, y) || getLevelStatus(x+1, y) || getLevelStatus(x, y-1) || getLevelStatus(x, y+1)
+
+
+func _on_play_button_input_event(_viewport, event, _shape_idx):
+	if (event is InputEventMouseButton && event.pressed):
+		emit_signal("level_changed", "play")

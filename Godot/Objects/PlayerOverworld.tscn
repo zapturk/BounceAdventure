@@ -57,4 +57,4 @@ uppercase = true
 [node name="PlayButton" parent="." instance=ExtResource("6_k7uqa")]
 position = Vector2(152, 60)
 
-[connection signal="input_event" from="PlayButton" to="PlayButton" method="_on_input_event"]
+[connection signal="input_event" from="PlayButton" to="." method="_on_play_button_input_event"]

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxuur8k7s5vcq"]
+
+[ext_resource type="PackedScene" uid="uid://cn7mq87snh6n8" path="res://Rooms/Overworld.tscn" id="1_cc5u3"]
+[ext_resource type="Script" path="res://Rooms/scene_switcher.gd" id="1_cubip"]
+
+[node name="SceneSwitcher" type="Node"]
+script = ExtResource("1_cubip")
+
+[node name="Overworld" parent="." instance=ExtResource("1_cc5u3")]

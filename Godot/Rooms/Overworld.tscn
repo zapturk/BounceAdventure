@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://cn7mq87snh6n8"]
+[gd_scene load_steps=6 format=3 uid="uid://cn7mq87snh6n8"]
 
+[ext_resource type="Script" path="res://Rooms/Overworld.gd" id="1_cpusm"]
 [ext_resource type="Texture2D" uid="uid://dapxi50bxnuew" path="res://Assets/Art/SpaceBackground.png" id="1_gqpq4"]
 [ext_resource type="Texture2D" uid="uid://ctxla2wauyxxf" path="res://Assets/Art/grid.png" id="1_nxt15"]
 [ext_resource type="PackedScene" uid="uid://mh0x4gvqxmhn" path="res://Objects/PlayerOverworld.tscn" id="2_cnpdm"]
 [ext_resource type="Script" path="res://Rooms/TextureRect.gd" id="3_naro1"]
 
 [node name="Overworld" type="Node2D"]
+script = ExtResource("1_cpusm")
 
 [node name="background" type="Sprite2D" parent="."]
 texture = ExtResource("1_gqpq4")
