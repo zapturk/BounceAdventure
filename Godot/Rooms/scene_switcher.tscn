@@ -1,0 +1,81 @@
+[gd_scene load_steps=7 format=3 uid="uid://dxuur8k7s5vcq"]
+
+[ext_resource type="PackedScene" uid="uid://cn7mq87snh6n8" path="res://Rooms/Overworld.tscn" id="1_cc5u3"]
+[ext_resource type="Script" path="res://Rooms/scene_switcher.gd" id="1_cubip"]
+
+[sub_resource type="Animation" id="Animation_bagux"]
+resource_name = "PaintItBlack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_wst1c"]
+resource_name = "PaintItClear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_t7rop"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ugb6e"]
+_data = {
+"PaintItBlack": SubResource("Animation_bagux"),
+"PaintItClear": SubResource("Animation_wst1c"),
+"RESET": SubResource("Animation_t7rop")
+}
+
+[node name="SceneSwitcher" type="Node"]
+script = ExtResource("1_cubip")
+
+[node name="Overworld" parent="." instance=ExtResource("1_cc5u3")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../ColorRect")
+libraries = {
+"": SubResource("AnimationLibrary_ugb6e")
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1160.0
+offset_top = -1090.0
+offset_right = 840.0
+offset_bottom = 910.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)

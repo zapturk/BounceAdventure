@@ -7,8 +7,6 @@ extends Area2D
 func _ready():
 	$AnimationPlayer.play("Fade")
 
-	print(global_position.x)
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

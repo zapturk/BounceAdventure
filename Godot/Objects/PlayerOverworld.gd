@@ -8,6 +8,7 @@ var inputs = {"ui_right": Vector2.RIGHT,
 var moving = false
 var coordinates
 var levelDic = {}
+signal level_changed
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -42,12 +43,18 @@ func move(dir):
 	
 func coordinatsText():
 	var text = ""
-	var x = (global_position.x - 8) / 16
-	var y = (global_position.y - 8) / 16
+	var x = getX()
+	var y = getY()
 	
 	text = "x:" + str(x) + " y:" + str(y)
 		
 	return text
+	
+func getX():
+	return (global_position.x - 8) / 16
+	
+func getY():
+	return (global_position.y - 8) / 16
 	
 func setLevelDic():
 	for x in range(-200, 200):
@@ -58,10 +65,15 @@ func setLevelDic():
 	print(levelDic.get("00"))
 
 func getPlayerPosLevelStatus():
-	return getLevelStatus((global_position.x - 8) / 16, (global_position.y - 8) / 16)
+	return getLevelStatus(getX(), getY())
 
 func getLevelStatus(x, y):
 	return levelDic.get(str(x)+str(y))
 
 func getMoveVisable(x, y):
 	return getLevelStatus(x, y) || getLevelStatus(x-1, y) || getLevelStatus(x+1, y) || getLevelStatus(x, y-1) || getLevelStatus(x, y+1)
+
+
+func _on_play_button_input_event(_viewport, event, _shape_idx):
+	if (event is InputEventMouseButton && event.pressed):
+		emit_signal("level_changed", "play")
