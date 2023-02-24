@@ -3,10 +3,13 @@ extends Node
 var nextLevel = null
 
 @onready var currentLevel = $Overworld
+@onready var anim = $AnimationPlayer
+@onready var colorArea = $ColorRect
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	currentLevel.connect("level_changed", handleLevelChanged)
+	colorArea.visible = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -23,18 +26,26 @@ func handleLevelChanged(currentLevelName: String):
 			nextLevelName = "test_breakout_room"
 		_:
 			return
-
+	
+	# make color visable and play animation
+	colorArea.visible = true
+	anim.play("PaintItBlack")
+	await anim.animation_finished
+	
 	nextLevel = load("res://Rooms/" + nextLevelName + ".tscn").instantiate()
-#	nextLevel.layer = -1
 	add_child(nextLevel)
-#	anim.play("fade_in")
+	move_child(nextLevel, 0)
 	nextLevel.connect("level_changed", handleLevelChanged)
-#	currentLevel.queue_free()
+#	transfer_data_between_scenes(currentLevel, nextLevel)
+	remove_child(currentLevel)
 	currentLevel = nextLevel
-#	currentLevel.layer = 1
 	nextLevel = null
-	#transfer_data_between_scenes(currentLevel, nextLevel)
+	
+	anim.play("PaintItClear")
+	await anim.animation_finished
+	colorArea.visible = false
 
 
 func transfer_data_between_scenes(old_scene, new_scene):
 	new_scene.load_level_parameters(old_scene.level_parameters)
+
