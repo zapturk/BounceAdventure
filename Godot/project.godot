@@ -35,6 +35,14 @@ click_left={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Wall"
+2d_physics/layer_3="Brick"
+2d_physics/layer_4="OutOfBounds"
+2d_physics/layer_5="Ball"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
