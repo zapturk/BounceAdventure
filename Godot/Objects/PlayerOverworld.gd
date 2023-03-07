@@ -19,6 +19,7 @@ func _ready():
 	coordinates.set_text(coordinatsText())
 	
 	
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	$MoveButton.visible = !moving
@@ -61,8 +62,11 @@ func getPlayerPosLevelStatus():
 	return global.getLevelStatus(getX(), getY())
 
 func getMoveVisable(x, y):
-	return global.getLevelStatus(x, y) || global.getLevelStatus(x-1, y) || global.getLevelStatus(x+1, y) || global.getLevelStatus(x, y-1) || global.getLevelStatus(x, y+1)
+	return getLevelStatus(x, y) || getLevelStatus(x-1, y) || getLevelStatus(x+1, y) || getLevelStatus(x, y-1) || getLevelStatus(x, y+1)
 
 func _on_play_button_input_event(_viewport, event, _shape_idx):
 	if (event is InputEventMouseButton && event.pressed):
-		emit_signal("level_changed", "play")
+				emit_signal("level_changed", "play")
+
+func getLevelStatus(x, y):
+	return global.levelDic.get(str(x)+str(y))
