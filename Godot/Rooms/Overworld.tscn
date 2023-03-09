@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://cn7mq87snh6n8"]
+[gd_scene load_steps=8 format=3 uid="uid://cn7mq87snh6n8"]
 
 [ext_resource type="Script" path="res://Rooms/Overworld.gd" id="1_cpusm"]
 [ext_resource type="Texture2D" uid="uid://dapxi50bxnuew" path="res://Assets/Art/SpaceBackground.png" id="1_gqpq4"]
 [ext_resource type="Texture2D" uid="uid://ctxla2wauyxxf" path="res://Assets/Art/grid.png" id="1_nxt15"]
 [ext_resource type="PackedScene" uid="uid://mh0x4gvqxmhn" path="res://Objects/PlayerOverworld.tscn" id="2_cnpdm"]
 [ext_resource type="Script" path="res://Rooms/TextureRect.gd" id="3_naro1"]
+[ext_resource type="Script" path="res://Rooms/TileMap.gd" id="6_a5ly1"]
+[ext_resource type="TileSet" uid="uid://dqvtiw8c8kn2f" path="res://Assets/Art/DarkArea/tileset_DarkArea.tres" id="6_gut7e"]
 
 [node name="Overworld" type="Node2D"]
 script = ExtResource("1_cpusm")
@@ -20,6 +22,12 @@ offset_bottom = 992.0
 texture = ExtResource("1_nxt15")
 stretch_mode = 1
 script = ExtResource("3_naro1")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("6_gut7e")
+format = 2
+layer_0/tile_data = PackedInt32Array(-327669, 196608, 3, -65538, 0, 0)
+script = ExtResource("6_a5ly1")
 
 [node name="PlayerOverworld" parent="." instance=ExtResource("2_cnpdm")]
 position = Vector2(-8, -8)

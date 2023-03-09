@@ -34,6 +34,7 @@ func _physics_process(delta):
 				brickLayer:
 					velocity = velocity.bounce(collisionObj.get_normal())
 					objHit.queue_free() # delete brick
+					get_parent().brickKilled()
 				_:
 					# build in bounce for any thing else
 					velocity = velocity.bounce(collisionObj.get_normal())
