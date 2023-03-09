@@ -5,14 +5,14 @@ env:
   GODOT_VERSION: '4.0'
   EXPORT_NAME: BounceAdventure
   PROJECT_PATH: Godot
-  RELEASE_NAME: rc3
+  RELEASE_NAME: stable
   
 jobs:
   export-windows:
     name: Windows Export
     runs-on: ubuntu-20.04
     container:
-      image: zapturk/scott-godot:rc3
+      image: zapturk/scott-godot:stable
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -38,7 +38,7 @@ jobs:
     name: Linux Export
     runs-on: ubuntu-20.04
     container:
-      image: zapturk/scott-godot:rc3
+      image: zapturk/scott-godot:stable
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -97,7 +97,7 @@ jobs:
     name: Mac Export
     runs-on: ubuntu-20.04
     container:
-      image: zapturk/scott-godot:rc3
+      image: zapturk/scott-godot:stable
     steps:
       - name: Checkout
         uses: actions/checkout@v2
