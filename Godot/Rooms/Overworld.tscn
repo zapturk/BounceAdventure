@@ -26,7 +26,7 @@ script = ExtResource("3_naro1")
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("6_gut7e")
 format = 2
-layer_0/tile_data = PackedInt32Array(-327669, 196608, 3)
+layer_0/tile_data = PackedInt32Array(-327669, 196608, 3, -65538, 0, 0)
 script = ExtResource("6_a5ly1")
 
 [node name="PlayerOverworld" parent="." instance=ExtResource("2_cnpdm")]

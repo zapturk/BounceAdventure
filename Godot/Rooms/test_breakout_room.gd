@@ -4,7 +4,6 @@ var ballCount: int = 0
 var brickCount: int = 0
 var ball = preload("res://Objects/ball.tscn")
 signal level_changed
-@onready var global = get_node("/root/Globals")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,9 +14,8 @@ func _process(_delta):
 	if ballCount == 0:
 		createBall()
 	if brickCount == 0:
-		global.levelDic["00"] = true
-		print(global.levelDic.get(str(0)+str(0)))
-		#global.tiles.erase(Vector2i(0, 0))
+		Globals.levelDic[str(Globals.playerX)+str(Globals.playerY)] = true
+		Globals.setTiles()
 		emit_signal("level_changed", "overworld")
 	
 func createBall():

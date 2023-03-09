@@ -2,13 +2,22 @@ extends Node2D
 
 @onready var levelDic = {}
 @onready var tiles = []
+@onready var playerX = 0
+@onready var playerY = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	setLevelDic()
+	setTiles()
 
 func setLevelDic():
 	for x in range(-200, 200):
 		for y in range(-200, 200):
 			levelDic.merge({str(x)+str(y): false})
-			#tiles.insert(tiles.size(), Vector2i(x, y))
+
+func setTiles():
+	tiles = []
+	for x in range(playerX - 8, playerX + 15):
+		for y in range(playerY - 7, playerY + 6):
+			if !levelDic.get(str(x)+str(y)):
+				tiles.insert(tiles.size(), Vector2i(x, y))

@@ -1,24 +1,20 @@
 extends Area2D
 
-@onready var global = get_node("/root/Globals")
 var TileSize = 16
 var inputs = {"ui_right": Vector2.RIGHT,
 			"ui_left": Vector2.LEFT,
 			"ui_up": Vector2.UP,
 			"ui_down": Vector2.DOWN}
 var moving = false
-var coordinates
+@onready var coordinates = $"Label"
 signal level_changed
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	position = position.snapped(Vector2.ONE * TileSize)
-	position += Vector2.ONE * TileSize/2
-	coordinates = $"Label"
+	position = Vector2(Globals.playerX * TileSize + 8, Globals.playerY * TileSize + 8)
+	position = position.snapped(Vector2.ONE * TileSize/2)
 	coordinates.set_text(coordinatsText())
-	
-	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -41,6 +37,9 @@ func move(dir):
 	moving = true
 	await tween.finished
 	moving = false
+	Globals.playerX = getX()
+	Globals.playerY = getY()
+	Globals.setTiles()
 	coordinates.set_text(coordinatsText())
 	
 func coordinatsText():
@@ -59,7 +58,7 @@ func getY():
 	return (global_position.y - 8) / 16
 
 func getPlayerPosLevelStatus():
-	return global.getLevelStatus(getX(), getY())
+	return Globals.getLevelStatus(getX(), getY())
 
 func getMoveVisable(x, y):
 	return getLevelStatus(x, y) || getLevelStatus(x-1, y) || getLevelStatus(x+1, y) || getLevelStatus(x, y-1) || getLevelStatus(x, y+1)
@@ -69,4 +68,4 @@ func _on_play_button_input_event(_viewport, event, _shape_idx):
 				emit_signal("level_changed", "play")
 
 func getLevelStatus(x, y):
-	return global.levelDic.get(str(x)+str(y))
+	return Globals.levelDic.get(str(x)+str(y))
