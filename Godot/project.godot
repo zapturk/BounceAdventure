@@ -46,6 +46,7 @@ click_left={
 2d_physics/layer_3="Brick"
 2d_physics/layer_4="OutOfBounds"
 2d_physics/layer_5="Ball"
+2d_physics/layer_6="PowerUp"
 
 [rendering]
 

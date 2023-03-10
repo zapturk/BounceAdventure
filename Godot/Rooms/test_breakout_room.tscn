@@ -54,3 +54,18 @@ shape = SubResource("RectangleShape2D_c177q")
 
 [node name="Brick" parent="." instance=ExtResource("4_81grq")]
 position = Vector2(144, 64)
+
+[node name="Brick2" parent="." instance=ExtResource("4_81grq")]
+position = Vector2(160, 64)
+
+[node name="Brick3" parent="." instance=ExtResource("4_81grq")]
+position = Vector2(176, 64)
+
+[node name="Brick4" parent="." instance=ExtResource("4_81grq")]
+position = Vector2(144, 72)
+
+[node name="Brick5" parent="." instance=ExtResource("4_81grq")]
+position = Vector2(160, 72)
+
+[node name="Brick6" parent="." instance=ExtResource("4_81grq")]
+position = Vector2(176, 72)

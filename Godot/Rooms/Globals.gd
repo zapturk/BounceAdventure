@@ -5,6 +5,11 @@ extends Node2D
 @onready var playerX = 0
 @onready var playerY = 0
 
+const playerLayer: int = 1 
+const wallLayer: int = 2 
+const brickLayer: int = 4
+const outOfBoundsLayer: int = 8
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	setLevelDic()
