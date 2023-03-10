@@ -4,10 +4,7 @@ var speed: int = 75
 var go: bool = false
 var player
 var controller
-const playerLayer: int = 1 
-const wallLayer: int = 2 
-const brickLayer: int = 4
-const outOfBoundsLayer: int = 8
+
 
 func _ready():
 	randomize()
@@ -23,17 +20,17 @@ func _physics_process(delta):
 			var objHit = collisionObj.get_collider()
 			
 			match objHit.get_collision_layer():
-				outOfBoundsLayer:
+				Globals.outOfBoundsLayer:
 					#kill ball if falls out
 					get_parent().ballKilled()
 					queue_free()
-				playerLayer:
+				Globals.playerLayer:
 	#				# so this make the ball go left if it lands on the left side of the bat or vice versa
 					velocity = velocity.from_angle(Vector2(player.position.x, player.position.y).angle_to_point(Vector2(position.x, position.y)))
 					speed += 10
-				brickLayer:
+				Globals.brickLayer:
 					velocity = velocity.bounce(collisionObj.get_normal())
-					objHit.queue_free() # delete brick
+					objHit.destroyBrick() # delete brick
 					get_parent().brickKilled()
 				_:
 					# build in bounce for any thing else
