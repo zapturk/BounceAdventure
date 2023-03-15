@@ -21,6 +21,10 @@ func _process(_delta):
 func createBall():
 	add_child(ball.instantiate())
 
+func cloneBalls():
+	var balls = get_node("Ball")
+	print(balls)
+
 func ballCreated():
 	ballCount += 1
 	

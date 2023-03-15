@@ -1,9 +1,16 @@
 extends CharacterBody2D
 
 const fallSpeed: int = 55 
+const powerUpOptions = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+var selectedPowerUp
 
 func _ready():
-	$AnimationPlayer.play("A")
+	selectedPowerUp = powerUpOptions.pick_random()
+	
+	#for testing
+	selectedPowerUp = "C"
+	
+	$AnimationPlayer.play(selectedPowerUp)
 	velocity = Vector2.DOWN
 
 func _physics_process(delta):
@@ -14,7 +21,11 @@ func _physics_process(delta):
 				Globals.outOfBoundsLayer:
 					queue_free()
 				Globals.playerLayer:
-					#Do amazing power up here
+					match selectedPowerUp:
+						"C":
+							get_parent().cloneBalls()
+						_:
+							pass
 					queue_free()
 				_:
 					pass
