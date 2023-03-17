@@ -9,7 +9,7 @@ func _ready():
 	selectedPowerUp = powerUpOptions.pick_random()
 	
 	#for testing
-	selectedPowerUp = "C"
+	selectedPowerUp = "N"
 	
 	$AnimationPlayer.play(selectedPowerUp)
 	velocity = Vector2.DOWN

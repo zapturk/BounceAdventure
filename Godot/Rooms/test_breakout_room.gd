@@ -23,4 +23,9 @@ func createBall():
 
 func cloneBalls():
 	for ballIns in $BallHolder.get_children():
-		createBall()
+		var newBall = ball.instantiate()
+		newBall.position = ballIns.position
+		newBall.go = true
+		newBall.velocity.y = ballIns.velocity.y
+		if $BallHolder.get_child_count() < Globals.ballLimit:
+			$BallHolder.add_child(newBall)
