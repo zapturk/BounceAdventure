@@ -1,6 +1,5 @@
 extends Node2D
 
-var ballCount: int = 0
 var brickCount: int = 0
 var ball = preload("res://Objects/ball.tscn")
 signal level_changed
@@ -11,24 +10,22 @@ func _ready():
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if ballCount == 0:
+	if $BallHolder.get_child_count() == 0:
 		createBall()
-	if brickCount == 0:
+	if $BrickHolder.get_child_count() == 0:
 		Globals.levelDic[str(Globals.playerX)+str(Globals.playerY)] = true
 		Globals.setTiles()
 		emit_signal("level_changed", "overworld")
 	
 func createBall():
-	add_child(ball.instantiate())
+	if $BallHolder.get_child_count() < Globals.ballLimit:
+		$BallHolder.add_child(ball.instantiate())
 
-func ballCreated():
-	ballCount += 1
-	
-func ballKilled():
-	ballCount -= 1
-
-func brickCreated():
-	brickCount += 1
-	
-func brickKilled():
-	brickCount -= 1
+func cloneBalls():
+	for ballIns in $BallHolder.get_children():
+		var newBall = ball.instantiate()
+		newBall.position = ballIns.position
+		newBall.go = true
+		newBall.velocity.y = ballIns.velocity.y
+		if $BallHolder.get_child_count() < Globals.ballLimit:
+			$BallHolder.add_child(newBall)
