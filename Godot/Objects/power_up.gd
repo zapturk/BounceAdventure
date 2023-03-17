@@ -3,6 +3,7 @@ extends CharacterBody2D
 const fallSpeed: int = 55 
 const powerUpOptions = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 var selectedPowerUp
+@onready var room = get_parent()
 
 func _ready():
 	selectedPowerUp = powerUpOptions.pick_random()
@@ -23,7 +24,9 @@ func _physics_process(delta):
 				Globals.playerLayer:
 					match selectedPowerUp:
 						"C":
-							get_parent().cloneBalls()
+							room.cloneBalls()
+						"N":
+							room.createBall()
 						_:
 							pass
 					queue_free()

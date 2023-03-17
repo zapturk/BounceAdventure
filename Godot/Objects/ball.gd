@@ -4,14 +4,15 @@ var speed: int = 75
 var go: bool = false
 var player
 var controller
+var room
+@onready var rng = RandomNumberGenerator.new()
 
 
 func _ready():
-	randomize()
-	velocity.x = [-.5,.5][randi() % 2]
-	velocity.y = 1
-	player = get_parent().get_node("Player")
-	get_parent().ballCreated()
+	velocity.x = rng.randf_range(-.5, .5)
+	velocity.y = -1
+	room = get_parent().get_parent()
+	player = room.get_node("Player")
 
 func _physics_process(delta):
 	if(go):
@@ -22,7 +23,6 @@ func _physics_process(delta):
 			match objHit.get_collision_layer():
 				Globals.outOfBoundsLayer:
 					#kill ball if falls out
-					get_parent().ballKilled()
 					queue_free()
 				Globals.playerLayer:
 	#				# so this make the ball go left if it lands on the left side of the bat or vice versa
@@ -31,7 +31,6 @@ func _physics_process(delta):
 				Globals.brickLayer:
 					velocity = velocity.bounce(collisionObj.get_normal())
 					objHit.destroyBrick() # delete brick
-					get_parent().brickKilled()
 				_:
 					# build in bounce for any thing else
 					velocity = velocity.bounce(collisionObj.get_normal())
