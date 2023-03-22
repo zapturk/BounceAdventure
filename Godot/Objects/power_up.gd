@@ -9,7 +9,7 @@ func _ready():
 	selectedPowerUp = powerUpOptions.pick_random()
 	
 	#for testing
-	selectedPowerUp = "N"
+	selectedPowerUp = "M"
 	
 	$AnimationPlayer.play(selectedPowerUp)
 	velocity = Vector2.DOWN
@@ -25,8 +25,12 @@ func _physics_process(delta):
 					match selectedPowerUp:
 						"C":
 							room.cloneBalls()
+						"E":
+							room.enlargePlayer()
 						"N":
 							room.createBall()
+						"M":
+							room.minimizePlayer()
 						_:
 							pass
 					queue_free()

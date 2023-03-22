@@ -72,4 +72,58 @@ position = Vector2(160, 72)
 [node name="Brick6" parent="BrickHolder" instance=ExtResource("4_81grq")]
 position = Vector2(176, 72)
 
+[node name="Brick7" parent="BrickHolder" instance=ExtResource("4_81grq")]
+position = Vector2(144, 80)
+
+[node name="Brick8" parent="BrickHolder" instance=ExtResource("4_81grq")]
+position = Vector2(160, 80)
+
+[node name="Brick9" parent="BrickHolder" instance=ExtResource("4_81grq")]
+position = Vector2(176, 80)
+
+[node name="Brick10" parent="BrickHolder" instance=ExtResource("4_81grq")]
+position = Vector2(144, 88)
+
+[node name="Brick11" parent="BrickHolder" instance=ExtResource("4_81grq")]
+position = Vector2(160, 88)
+
+[node name="Brick12" parent="BrickHolder" instance=ExtResource("4_81grq")]
+position = Vector2(176, 88)
+
+[node name="Brick13" parent="BrickHolder" instance=ExtResource("4_81grq")]
+position = Vector2(192, 64)
+
+[node name="Brick14" parent="BrickHolder" instance=ExtResource("4_81grq")]
+position = Vector2(208, 64)
+
+[node name="Brick15" parent="BrickHolder" instance=ExtResource("4_81grq")]
+position = Vector2(224, 64)
+
+[node name="Brick16" parent="BrickHolder" instance=ExtResource("4_81grq")]
+position = Vector2(192, 72)
+
+[node name="Brick17" parent="BrickHolder" instance=ExtResource("4_81grq")]
+position = Vector2(208, 72)
+
+[node name="Brick18" parent="BrickHolder" instance=ExtResource("4_81grq")]
+position = Vector2(224, 72)
+
+[node name="Brick19" parent="BrickHolder" instance=ExtResource("4_81grq")]
+position = Vector2(192, 80)
+
+[node name="Brick20" parent="BrickHolder" instance=ExtResource("4_81grq")]
+position = Vector2(208, 80)
+
+[node name="Brick21" parent="BrickHolder" instance=ExtResource("4_81grq")]
+position = Vector2(224, 80)
+
+[node name="Brick22" parent="BrickHolder" instance=ExtResource("4_81grq")]
+position = Vector2(192, 88)
+
+[node name="Brick23" parent="BrickHolder" instance=ExtResource("4_81grq")]
+position = Vector2(208, 88)
+
+[node name="Brick24" parent="BrickHolder" instance=ExtResource("4_81grq")]
+position = Vector2(224, 88)
+
 [node name="BallHolder" type="Node2D" parent="."]

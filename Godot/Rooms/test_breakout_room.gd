@@ -29,3 +29,9 @@ func cloneBalls():
 		newBall.velocity.y = ballIns.velocity.y
 		if $BallHolder.get_child_count() < Globals.ballLimit:
 			$BallHolder.add_child(newBall)
+
+func enlargePlayer():
+	$Player.enlargePlayer()
+	
+func minimizePlayer():
+	$Player.minimizePlayer()
