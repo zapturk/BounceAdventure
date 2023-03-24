@@ -1,10 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4va6j6kum7wv"]
+[gd_scene load_steps=8 format=3 uid="uid://c4va6j6kum7wv"]
 
 [ext_resource type="Texture2D" uid="uid://rjc6vqj7pkbi" path="res://Assets/Art/ball.png" id="1_41c3e"]
 [ext_resource type="Script" path="res://Objects/ball.gd" id="1_my78r"]
+[ext_resource type="Script" path="res://Objects/Line2D.gd" id="3_oly6u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pylh3"]
 radius = 4.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nq22o"]
+blend_mode = 1
+
+[sub_resource type="Curve" id="Curve_0opt0"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0.646565), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_hj5tm"]
+offsets = PackedFloat32Array(0.157895, 0.531496, 1)
+colors = PackedColorArray(0.301961, 0.945098, 0.945098, 0.14902, 0.17764, 0.257767, 0.810338, 0.443137, 0.209885, 0.442637, 0.811644, 1)
 
 [node name="Ball" type="CharacterBody2D"]
 collision_layer = 16
@@ -12,7 +24,15 @@ collision_mask = 15
 script = ExtResource("1_my78r")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
 texture = ExtResource("1_41c3e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_pylh3")
+
+[node name="Line2D" type="Line2D" parent="."]
+visible = false
+material = SubResource("CanvasItemMaterial_nq22o")
+width_curve = SubResource("Curve_0opt0")
+gradient = SubResource("Gradient_hj5tm")
+script = ExtResource("3_oly6u")

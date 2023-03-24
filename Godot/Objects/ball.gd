@@ -39,4 +39,5 @@ func _physics_process(delta):
 		position.y = player.position.y - 8
 		
 	if Input.is_action_pressed("ui_accept"):
+		$Line2D.start()
 		go = true
