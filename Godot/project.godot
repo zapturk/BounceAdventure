@@ -47,6 +47,7 @@ click_left={
 2d_physics/layer_4="OutOfBounds"
 2d_physics/layer_5="Ball"
 2d_physics/layer_6="PowerUp"
+2d_physics/layer_7="KiBlast"
 
 [rendering]
 

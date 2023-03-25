@@ -10,7 +10,7 @@ func _ready():
 	selectedPowerUp = powerUpOptions.pick_random()
 	
 	#for testing
-	selectedPowerUp = "M"
+	selectedPowerUp = "K"
 	
 	$AnimationPlayer.play(selectedPowerUp)
 	velocity = Vector2.DOWN
@@ -29,6 +29,8 @@ func _on_body_entered(body):
 							room.cloneBalls()
 						"E":
 							room.enlargePlayer()
+						"K":
+							room.kiBlast()
 						"N":
 							room.createBall()
 						"M":

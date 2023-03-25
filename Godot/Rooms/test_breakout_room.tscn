@@ -127,3 +127,10 @@ position = Vector2(208, 88)
 position = Vector2(224, 88)
 
 [node name="BallHolder" type="Node2D" parent="."]
+
+[node name="WallBottom2" type="StaticBody2D" parent="."]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallBottom2"]
+position = Vector2(160, -101)
+shape = SubResource("RectangleShape2D_c177q")
