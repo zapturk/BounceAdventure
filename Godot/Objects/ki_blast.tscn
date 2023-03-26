@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://du30pljheb402"]
+
+[ext_resource type="Texture2D" uid="uid://qsdae818i8ie" path="res://Assets/Art/KiBlast.png" id="1_8dve8"]
+[ext_resource type="Script" path="res://Objects/ki_blast.gd" id="1_n8vvf"]
+[ext_resource type="Script" path="res://Objects/Line2D.gd" id="3_n55fh"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l1rud"]
+radius = 4.0
+height = 12.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_k3boo"]
+blend_mode = 1
+
+[sub_resource type="Curve" id="Curve_k6w1y"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0.619084), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_mfh1b"]
+offsets = PackedFloat32Array(0.015748, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 0.2, 0, 1)
+
+[node name="KiBlast" type="Area2D"]
+collision_layer = 64
+collision_mask = 12
+script = ExtResource("1_n8vvf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+texture = ExtResource("1_8dve8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_l1rud")
+
+[node name="Line2D" type="Line2D" parent="."]
+material = SubResource("CanvasItemMaterial_k3boo")
+width_curve = SubResource("Curve_k6w1y")
+gradient = SubResource("Gradient_mfh1b")
+script = ExtResource("3_n55fh")
+length = 15
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

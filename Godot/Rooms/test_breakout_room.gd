@@ -35,3 +35,6 @@ func enlargePlayer():
 	
 func minimizePlayer():
 	$Player.minimizePlayer()
+	
+func kiBlast():
+	$Player.kiAvailable = true

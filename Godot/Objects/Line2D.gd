@@ -1,7 +1,7 @@
 extends Line2D
 
 @export var length:int = 30
-@onready var ball = get_parent()
+@onready var kiBlast = get_parent()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,7 +11,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	add_point(ball.global_position)
+	add_point(kiBlast.global_position)
 	
 	if points.size() > length:
 		remove_point(0)
